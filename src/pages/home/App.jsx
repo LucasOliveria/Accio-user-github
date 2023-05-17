@@ -21,8 +21,10 @@ function App() {
             Escolha uma <span className='highlighted-word'> localidade
             </span>.
           </p>
-          <p>Selecione uma ou mais <span className='highlighted-word'>linguagens de programação
-          </span> desejadas e busque os melhores.</p>
+          <p>
+            Selecione uma ou mais <span className='highlighted-word'>linguagens de programação
+            </span> desejadas e busque os melhores.
+          </p>
           <p>
             Lance um <span className='highlighted-word'>Accio</span>!
           </p>
@@ -38,6 +40,24 @@ function App() {
         </div>
       </div>
       <div className="right-container">
+        <form>
+
+          <div className="locations">
+            <select name="select-state" id="">
+              <option value="">Selecione o estado</option>
+            </select>
+            <select name="select-city" id="">
+              <option value="">Selecione a cidade</option>
+            </select>
+
+          </div>
+
+          <div className="languages">
+
+          </div>
+
+          <button>Accio</button>
+        </form>
       </div>
     </div>
   )

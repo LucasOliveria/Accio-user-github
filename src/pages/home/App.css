@@ -15,13 +15,12 @@
     padding: 35px 35px 0;
     background-image: url("../../assets/magic.png");
     background-repeat: no-repeat;
-    background-position: top -85px center;
-    background-size: contain;
+    background-position: bottom 0%;
+    background-size: cover;
 }
 
 .left-container h1 {
     font-family: "roboto", serif;
-    /* font-family: "lumos", serif; */
     font-size: 60px;
 }
 
@@ -32,13 +31,14 @@ img[alt="cat"] {
 
 .instructions {
     padding-left: 15px;
+    width: 600px;
 }
 
 .instructions h2 {
+    margin-bottom: 40px;
     font-size: 40px;
     line-height: 39px;
     font-weight: normal;
-    margin-bottom: 40px;
 
 }
 
@@ -59,4 +59,73 @@ img[alt="cat"] {
 .icon-reference a {
     text-decoration: none;
     color: #ffffff;
+}
+
+.right-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    background-image: url("../../assets/magic-wand.png");
+    background-repeat: no-repeat;
+    background-position: top 50px left 0%;
+    background-size: contain;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 400px;
+    height: 500px;
+    padding: 25px 0;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.020);
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
+}
+
+.locations {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.locations select {
+
+    width: 340px;
+    height: 45px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    text-align: center;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.7);
+    /* border: none; */
+    background-color: unset;
+
+    transition: all 0.2s;
+}
+
+.locations select:hover {
+    box-shadow: 0 2px 20px #b0351f;
+}
+
+button {
+    all: unset;
+    width: 90px;
+    height: 35px;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #4cc9f0;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+button:hover {
+    background-color: #4fcff7;
+    box-shadow: 0 2px 20px #72efdd;
+
 }
