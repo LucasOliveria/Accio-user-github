@@ -1,9 +1,49 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import wand from "../../../public/wand.png"
 import cat from "../../assets/cat.png"
+import apiIbge from '../../services/api-ibge';
 import './App.css';
 
 function App() {
+  const [states, setStates] = useState([]);
+  const [cities, setCities] = useState([{ id: 1, nome: "Selecione o estado" }]);
+  const [selectedStates, setSelectedStates] = useState("");
+  const [selectedCities, setSelectedCities] = useState("");
+
+  async function getStates() {
+    try {
+      const response = await apiIbge.get("/estados");
+
+      setStates([{ id: 1, nome: "Selecione o estado" }, ...response.data]);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async function getCities() {
+    if (!selectedStates) {
+      return;
+    }
+
+    const stateObject = states.find((state) => state.nome === selectedStates);
+
+    try {
+      const response = await apiIbge.get(`/estados/${stateObject.sigla}/distritos`);
+
+      setCities(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+
+  useEffect(() => {
+    getStates();
+  }, [])
+
+  useEffect(() => {
+    getCities();
+  }, [selectedStates])
 
   return (
     <div className="container-main">
@@ -41,13 +81,36 @@ function App() {
       </div>
       <div className="right-container">
         <form>
-
           <div className="locations">
-            <select name="select-state" id="">
-              <option value="">Selecione o estado</option>
+            <select
+              name="select-state"
+              onChange={(event) => setSelectedStates(event.target.value)}
+              value={selectedStates}
+            >
+              {states.map((state) => (
+                <option
+                  key={state.id}
+                  value={state.nome}
+                // onClick={() => getCities()}
+                >
+                  {state.nome}
+                </option>
+              ))}
             </select>
-            <select name="select-city" id="">
-              <option value="">Selecione a cidade</option>
+
+            <select
+              name="select-city"
+              onChange={(event) => setSelectedCities(event.target.value)}
+              value={selectedCities}
+            >
+              {cities.map((city) => (
+                <option
+                  key={city.id}
+                  value={city.nome}
+                >
+                  {city.nome}
+                </option>
+              ))}
             </select>
 
           </div>

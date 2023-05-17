@@ -81,7 +81,7 @@ form {
     height: 500px;
     padding: 25px 0;
     border-radius: 10px;
-    background: rgba(255, 255, 255, 0.020);
+    background-color: rgba(255, 255, 255, 0.020);
     box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
 }
 
@@ -99,14 +99,18 @@ form {
     border-radius: 5px;
     margin-bottom: 15px;
     font-family: "Roboto", sans-serif;
+    padding: 10px;
     font-weight: 700;
-    text-align: center;
+    /* text-align: center; */
     font-size: 16px;
     color: rgba(255, 255, 255, 0.7);
-    /* border: none; */
     background-color: unset;
 
     transition: all 0.2s;
+}
+
+.locations select option {
+    background-color: #000000;
 }
 
 .locations select:hover {
