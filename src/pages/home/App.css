@@ -1,29 +1,37 @@
 .container-main {
     display: flex;
     justify-content: space-between;
-    width: 100vw;
+    max-width: 100vw;
     min-height: 100vh;
-    background: linear-gradient(to left, #5A189A, #000000 75%);
+    background: linear-gradient(to left, #5A189A, #000000 65%);
     color: #ffffff;
 }
 
 .left-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: 50%;
-    padding: 35px;
+    padding: 35px 35px 0;
+    background-image: url("../../assets/magic.png");
+    background-repeat: no-repeat;
+    background-position: top -85px center;
+    background-size: contain;
 }
 
 .left-container h1 {
-    font-family: "lumos", serif;
+    font-family: "roboto", serif;
+    /* font-family: "lumos", serif; */
     font-size: 60px;
-    margin-bottom: 80px;
+}
+
+img[alt="cat"] {
+    width: 50px;
+    margin-left: 15px;
 }
 
 .instructions {
     padding-left: 15px;
-}
-
-.highlighted-word {
-    color: #4cc9f0;
 }
 
 .instructions h2 {
@@ -40,4 +48,15 @@
     margin-bottom: 18px;
 }
 
-/* .instructions p:last-child {} */
+.highlighted-word {
+    color: #4cc9f0;
+}
+
+.icon-reference {
+    font-size: 10px;
+}
+
+.icon-reference a {
+    text-decoration: none;
+    color: #ffffff;
+}

@@ -1,13 +1,17 @@
 import { useState } from 'react';
+import wand from "../../../public/wand.png"
+import cat from "../../assets/cat.png"
 import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <div className="container-main">
       <div className="left-container">
-        <h1>Accio Users GitHub</h1>
+        <h1>
+          Accio Users GitHub
+          <img src={cat} alt="cat" />
+        </h1>
 
         <div className='instructions'>
           <h2>
@@ -22,6 +26,15 @@ function App() {
           <p>
             Lance um <span className='highlighted-word'>Accio</span>!
           </p>
+        </div>
+        <div></div>
+
+        <div className='icon-reference'>
+          <a
+            href="https://br.freepik.com/vetores-gratis/varinha-magica-com-fundo-vermelho-da-fuga_1110451.htm#query=varinha%20magica&position=10&from_view=keyword&track=ais" target='_black'
+          >
+            Image by gluiki - Freepik
+          </a>
         </div>
       </div>
       <div className="right-container">
