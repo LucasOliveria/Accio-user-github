@@ -1,0 +1,23 @@
+.languages {
+    margin: 10px 0;
+}
+
+.content-language {
+    display: flex;
+    gap: 10px 15px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.language {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 105px;
+    height: 28px;
+    font-weight: 400;
+    font-size: 14px;
+    background-color: #ffffff15;
+    cursor: pointer;
+    transition: all 0.2s;
+}

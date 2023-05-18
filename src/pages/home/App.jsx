@@ -1,16 +1,16 @@
 import { useEffect, useState } from 'react';
 import cat from "../../assets/cat.png"
+import optIcon from "../../assets/opt-icon.svg"
 import apiIbge from '../../services/api-ibge';
-import { languages } from '../../data/languages';
 import './App.css';
+import ModalLanguages from '../../components/ModalLanguages';
 
 function App() {
   const [states, setStates] = useState([]);
   const [cities, setCities] = useState([{ id: 1, nome: "Selecione a cidade" }]);
   const [selectedStates, setSelectedStates] = useState("");
   const [selectedCities, setSelectedCities] = useState("");
-  const [arrLanguages, setArrLanguages] = useState(languages);
-  const [appear, setAppear] = useState(false);
+  const [appearModalLanguages, setAppearModalLanguages] = useState(false);
 
   async function getStates() {
     try {
@@ -86,6 +86,7 @@ function App() {
       </div>
       <div className="right-container">
         <form>
+
           <div className="locations">
             <select
               name="select-state"
@@ -116,22 +117,22 @@ function App() {
                 </option>
               ))}
             </select>
-
           </div>
 
-          <div className="languages">
+          <div
+            className='btn-languages'
+            onClick={() => setAppearModalLanguages(!appearModalLanguages)}
+          >
             <span>Selecione as linguagens</span>
-            <div className="content-language">
-              {arrLanguages.map((language) => (
-                <div
-                  key={language.id}
-                  className="language"
-                >
-                  {language.name}
-                </div>
-              ))}
-            </div>
+
+            <img
+              src={optIcon}
+              alt="opções"
+              style={{ transform: `${appearModalLanguages ? "rotate(45deg)" : "rotate(-90deg)"}` }}
+            />
           </div>
+
+          {appearModalLanguages && <ModalLanguages />}
 
           <button>Accio</button>
         </form>
