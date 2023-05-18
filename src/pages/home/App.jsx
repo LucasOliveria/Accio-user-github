@@ -1,20 +1,24 @@
 import { useEffect, useState } from 'react';
-import wand from "../../../public/wand.png"
 import cat from "../../assets/cat.png"
 import apiIbge from '../../services/api-ibge';
+import { languages } from '../../data/languages';
 import './App.css';
 
 function App() {
   const [states, setStates] = useState([]);
-  const [cities, setCities] = useState([{ id: 1, nome: "Selecione o estado" }]);
+  const [cities, setCities] = useState([{ id: 1, nome: "Selecione a cidade" }]);
   const [selectedStates, setSelectedStates] = useState("");
   const [selectedCities, setSelectedCities] = useState("");
+  const [arrLanguages, setArrLanguages] = useState(languages);
+  const [appear, setAppear] = useState(false);
 
   async function getStates() {
     try {
       const response = await apiIbge.get("/estados");
 
-      setStates([{ id: 1, nome: "Selecione o estado" }, ...response.data]);
+      const statesAlphabeticalOrder = response.data.sort((a, b) => a.nome.localeCompare(b.nome));
+
+      setStates([{ id: 1, nome: "Selecione o estado" }, ...statesAlphabeticalOrder]);
     } catch (error) {
       console.log(error);
     }
@@ -30,26 +34,27 @@ function App() {
     try {
       const response = await apiIbge.get(`/estados/${stateObject.sigla}/distritos`);
 
-      setCities(response.data);
+      const citiesAlphabeticalOrder = response.data.sort((a, b) => a.nome.localeCompare(b.nome));
+
+      setCities(citiesAlphabeticalOrder);
     } catch (error) {
       console.log(error);
     }
   }
 
-
   useEffect(() => {
     getStates();
-  }, [])
+  }, []);
 
   useEffect(() => {
     getCities();
-  }, [selectedStates])
+  }, [selectedStates]);
 
   return (
     <div className="container-main">
       <div className="left-container">
         <h1>
-          Accio Users GitHub
+          Accio Users
           <img src={cat} alt="cat" />
         </h1>
 
@@ -91,7 +96,6 @@ function App() {
                 <option
                   key={state.id}
                   value={state.nome}
-                // onClick={() => getCities()}
                 >
                   {state.nome}
                 </option>
@@ -116,7 +120,17 @@ function App() {
           </div>
 
           <div className="languages">
-
+            <span>Selecione as linguagens</span>
+            <div className="content-language">
+              {arrLanguages.map((language) => (
+                <div
+                  key={language.id}
+                  className="language"
+                >
+                  {language.name}
+                </div>
+              ))}
+            </div>
           </div>
 
           <button>Accio</button>
