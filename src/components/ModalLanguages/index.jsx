@@ -1,6 +1,6 @@
-import "./style.css";
-import { languages } from '../../data/languages';
 import { useState } from "react";
+import { languages } from '../../data/languages';
+import "./style.css";
 
 function ModalLanguages() {
   const [arrLanguages, setArrLanguages] = useState(languages);
