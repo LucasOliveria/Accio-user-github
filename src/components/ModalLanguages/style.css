@@ -15,9 +15,17 @@
     align-items: center;
     width: 105px;
     height: 28px;
-    font-weight: 400;
+    font-weight: 700;
     font-size: 14px;
-    background-color: #ffffff15;
+    background-color: #000000a9;
     cursor: pointer;
     transition: all 0.2s;
+}
+
+.selected-true {
+    background-color: #4fcff7;
+}
+
+.selected-false {
+    background-color: #000000a9;
 }

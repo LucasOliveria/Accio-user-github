@@ -11,7 +11,7 @@ function ModalLanguages() {
         {arrLanguages.map((language) => (
           <div
             key={language.id}
-            className="language flip-in-hor-bottom"
+            className={`language flip-in-hor-bottom ${language.selected ? "selected-true" : "selected-false"}`}
           >
             {language.name}
           </div>
