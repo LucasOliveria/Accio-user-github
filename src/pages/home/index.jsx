@@ -28,7 +28,6 @@ function Home() {
               Lance um <span className='highlighted-word'>Accio</span>!
             </p>
           </div>
-          <div></div>
 
           <div className='icon-reference'>
             <a

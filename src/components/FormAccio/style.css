@@ -3,7 +3,7 @@ form {
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  width: 550px;
+  width: 85%;
   padding: 25px 30px;
   margin: 2.5% 0;
   background-color: rgba(255, 255, 255, 0.020);
@@ -19,6 +19,7 @@ form,
 }
 
 .locations {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,7 +27,7 @@ form,
 }
 
 .locations select {
-  width: 500px;
+  width: 100%;
   font-family: "Roboto", sans-serif;
   margin-bottom: 15px;
   padding: 10px;
@@ -47,23 +48,18 @@ form,
   background-color: #ffffff;
 }
 
-.locations select:hover,
-.btn-languages:hover {
-  box-shadow: 0 2px 15px #b0351f;
-}
-
 .btn-languages {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 250px;
+  width: 50%;
   padding: 13px;
 }
 
 img[alt="opções"] {
   width: 15px;
   height: 17px;
-  transition: all 0.6s;
+  transition: all 0.7s;
 }
 
 .btn-languages,
@@ -72,20 +68,16 @@ img[alt="opções"] {
 }
 
 button {
-  all: unset;
   align-self: center;
   width: 90px;
   height: 35px;
   margin-top: 15px;
+  border: none;
   border-radius: 10px;
   text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: #ffffff;
   background-color: #46b8db;
   cursor: pointer;
-  transition: all 0.2s;
-}
-
-button:hover,
-.language:hover {
-  background-color: #4fcff7;
-  box-shadow: 0 2px 20px #72efdd;
 }
