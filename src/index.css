@@ -24,8 +24,9 @@
 .container-main {
   max-width: 100vw;
   min-height: 100vh;
-  background: linear-gradient(to right, #000000 35%, #5A189A);
+  background: linear-gradient(to right, #000000 20%, #5A189A);
   color: #ffffff;
+  position: relative;
 }
 
 .container-background {
@@ -36,13 +37,29 @@
   background-image: url("./assets/magic-wand.png");
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: top 100px right;
+  background-attachment: fixed;
+  background-position: top right;
+}
+
+form,
+.locations select,
+.btn-languages,
+.language,
+.user-card {
+  border-radius: 10px;
+}
+
+.btn-languages,
+.language,
+.user-card {
+  border: 1px solid #767676;
 }
 
 .locations select,
 .btn-languages,
 button,
-.language {
+.language,
+.user-card {
   transition: all 0.3s;
 }
 

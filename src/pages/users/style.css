@@ -4,3 +4,65 @@
     align-items: center;
     justify-content: flex-start;
 }
+
+.users {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user-card {
+    display: flex;
+    align-items: center;
+    width: 300px;
+    height: 100px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    font-weight: 700;
+    font-size: 14px;
+    background-color: #000000a9;
+}
+
+.user-card:first-of-type {
+    margin-top: 25px;
+}
+
+.user-card:hover {
+    transform: scale(1.05);
+}
+
+img[alt="avatar"] {
+    width: 60px;
+    border-radius: 50%;
+    padding: 2px;
+    border: 2px solid #767676;
+    background-color: #ffffff;
+}
+
+.info-user {
+    margin-left: 20px;
+}
+
+.info-user a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.visit-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 25px;
+    border: none;
+    border-radius: 10px;
+    background-color: #46b8db;
+    cursor: pointer;
+}
+
+.container-users button {
+    margin: 0 15px 15px 0;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
