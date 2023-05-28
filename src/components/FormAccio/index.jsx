@@ -1,17 +1,22 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import optIcon from "../../assets/opt-icon.svg";
-import apiIbge from '../../services/api-ibge';
+import { languages } from '../../data/languages';
 import apiGitHub from "../../services/api-git-hub";
+import apiIbge from '../../services/api-ibge';
 import ModalLanguages from "../ModalLanguages";
 import "./style.css";
 
 function FormAccio() {
+  const navigate = useNavigate();
+
   const [states, setStates] = useState([]);
   const [cities, setCities] = useState([]);
   const [selectedStates, setSelectedStates] = useState("");
   const [selectedCities, setSelectedCities] = useState("");
   const [appearModalLanguages, setAppearModalLanguages] = useState(false);
-  const [languagesSelected, setlanguagesSelected] = useState([])
+  const [arrLanguages, setArrLanguages] = useState(languages);
+  const [languagesSelected, setlanguagesSelected] = useState([]);
 
   async function getStates() {
     try {
@@ -63,7 +68,13 @@ function FormAccio() {
     try {
       const response = await apiGitHub.get(`/search/users?q=location:"${selectedStates}" location:"${selectedCities}" ${stringLanguage.trim()}`);
 
-      console.log(response.data.items);
+      // console.log(response.data.items);
+      setSelectedStates("");
+      setSelectedCities("");
+      setlanguagesSelected([]);
+      arrLanguages.forEach((language) => language.selected = false);
+
+      navigate("/users");
     } catch (error) {
       console.log(error);
     }
@@ -126,6 +137,8 @@ function FormAccio() {
 
       {appearModalLanguages && (
         <ModalLanguages
+          arrLanguages={arrLanguages}
+          setArrLanguages={setArrLanguages}
           languagesSelected={languagesSelected}
           setlanguagesSelected={setlanguagesSelected}
         />

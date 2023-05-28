@@ -1,9 +1,8 @@
-import { useState } from "react";
-import { languages } from '../../data/languages';
+import { useEffect } from "react";
 import "./style.css";
 
-function ModalLanguages({ languagesSelected, setlanguagesSelected }) {
-  const [arrLanguages, setArrLanguages] = useState(languages);
+function ModalLanguages({ arrLanguages, setArrLanguages, languagesSelected, setlanguagesSelected }) {
+
 
   function handleSelectLanguage(language) {
     const localLanguagesSelected = [...languagesSelected];

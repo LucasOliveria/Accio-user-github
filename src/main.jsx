@@ -1,8 +1,11 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import Home from './pages/home/index.jsx'
-import './index.css'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from "react-router-dom";
+import './index.css';
+import AllRoutes from './routes';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <Home />
+  <BrowserRouter>
+    <AllRoutes />
+  </BrowserRouter>
 )
