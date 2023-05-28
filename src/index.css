@@ -24,7 +24,7 @@
 .container-main {
   max-width: 100vw;
   min-height: 100vh;
-  background: linear-gradient(to right, #000000 25%, #5A189A);
+  background: linear-gradient(to right, #000000 35%, #5A189A);
   color: #ffffff;
 }
 
@@ -54,7 +54,7 @@ button:hover,
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 15px;
 
 }
 
@@ -64,5 +64,5 @@ button:hover,
 
 ::-webkit-scrollbar-thumb {
   border-radius: 5px;
-  background-color: #5A189A;
+  background-color: #7B2CBF;
 }

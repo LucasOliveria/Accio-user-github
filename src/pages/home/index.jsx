@@ -2,11 +2,11 @@ import cat from "../../assets/cat.png";
 import FormAccio from '../../components/FormAccio';
 import './style.css';
 
-function Home() {
+function Home({ setUsersList, entranceExit, setEntranceExit }) {
   return (
     <div className="container-main">
       <div className="container-background">
-        <div className="left-container">
+        <div className={`left-container ${!entranceExit ? "slide-in-top" : "slide-out-top"}`}>
           <h1>
             Accio Users
             <img src={cat} alt="cat" />
@@ -37,8 +37,11 @@ function Home() {
             </a>
           </div>
         </div>
-        <div className="right-container">
-          <FormAccio />
+        <div className={`right-container ${!entranceExit ? "slide-in-top" : "slide-out-top"}`} >
+          <FormAccio
+            setUsersList={setUsersList}
+            setEntranceExit={setEntranceExit}
+          />
         </div>
       </div>
     </div>

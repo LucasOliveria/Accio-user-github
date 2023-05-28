@@ -1,9 +1,6 @@
-import { useEffect } from "react";
 import "./style.css";
 
-function ModalLanguages({ arrLanguages, setArrLanguages, languagesSelected, setlanguagesSelected }) {
-
-
+function ModalLanguages({ languagesList, languagesSelected, setlanguagesSelected }) {
   function handleSelectLanguage(language) {
     const localLanguagesSelected = [...languagesSelected];
 
@@ -29,7 +26,7 @@ function ModalLanguages({ arrLanguages, setArrLanguages, languagesSelected, setl
   return (
     <div className="languages">
       <div className="content-language">
-        {arrLanguages.map((language) => (
+        {languagesList.map((language) => (
           <div
             key={language.id}
             className={`language flip-in-hor-bottom ${language.selected ? "selected-true" : "selected-false"}`}

@@ -7,7 +7,7 @@ import apiIbge from '../../services/api-ibge';
 import ModalLanguages from "../ModalLanguages";
 import "./style.css";
 
-function FormAccio() {
+function FormAccio({ setUsersList, setEntranceExit }) {
   const navigate = useNavigate();
 
   const [states, setStates] = useState([]);
@@ -15,7 +15,7 @@ function FormAccio() {
   const [selectedStates, setSelectedStates] = useState("");
   const [selectedCities, setSelectedCities] = useState("");
   const [appearModalLanguages, setAppearModalLanguages] = useState(false);
-  const [arrLanguages, setArrLanguages] = useState(languages);
+  const [languagesList, setLanguagesList] = useState(languages);
   const [languagesSelected, setlanguagesSelected] = useState([]);
 
   async function getStates() {
@@ -66,18 +66,30 @@ function FormAccio() {
     }
 
     try {
-      const response = await apiGitHub.get(`/search/users?q=location:"${selectedStates}" location:"${selectedCities}" ${stringLanguage.trim()}`);
+      const response = await apiGitHub.get(`/search/users?q=location:"${selectedCities}" ${stringLanguage.trim()}`);
 
-      // console.log(response.data.items);
-      setSelectedStates("");
-      setSelectedCities("");
-      setlanguagesSelected([]);
-      arrLanguages.forEach((language) => language.selected = false);
+      setUsersList(response.data.items);
 
-      navigate("/users");
+      clearForm();
+
+      setEntranceExit(true);
+
+      // console.log(`/search/users?q=location:"${selectedCities}" ${stringLanguage.trim()}`);
+
+      setTimeout(() => {
+        navigate("/users");
+      }, 900);
+
     } catch (error) {
       console.log(error);
     }
+  }
+
+  function clearForm() {
+    setSelectedStates("");
+    setSelectedCities("");
+    setlanguagesSelected([]);
+    languagesList.forEach((language) => language.selected = false);
   }
 
   useEffect(() => {
@@ -137,8 +149,7 @@ function FormAccio() {
 
       {appearModalLanguages && (
         <ModalLanguages
-          arrLanguages={arrLanguages}
-          setArrLanguages={setArrLanguages}
+          languagesList={languagesList}
           languagesSelected={languagesSelected}
           setlanguagesSelected={setlanguagesSelected}
         />
