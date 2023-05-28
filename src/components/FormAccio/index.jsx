@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import optIcon from "../../assets/opt-icon.svg";
 import apiIbge from '../../services/api-ibge';
+import apiGitHub from "../../services/api-git-hub";
 import ModalLanguages from "../ModalLanguages";
 import "./style.css";
 
@@ -10,14 +11,13 @@ function FormAccio() {
   const [selectedStates, setSelectedStates] = useState("");
   const [selectedCities, setSelectedCities] = useState("");
   const [appearModalLanguages, setAppearModalLanguages] = useState(false);
+  const [languagesSelected, setlanguagesSelected] = useState([])
 
   async function getStates() {
     try {
-      const response = await apiIbge.get("/estados");
+      const response = await apiIbge.get("/estados?orderBy=nome");
 
-      const statesAlphabeticalOrder = response.data.sort((a, b) => a.nome.localeCompare(b.nome));
-
-      setStates([{ id: 1, nome: "Selecione o estado" }, ...statesAlphabeticalOrder]);
+      setStates([{ id: 1, nome: "Selecione o estado" }, ...response.data]);
     } catch (error) {
       console.log(error);
     }
@@ -32,11 +32,38 @@ function FormAccio() {
     const stateObject = states.find((state) => state.nome === selectedStates);
 
     try {
-      const response = await apiIbge.get(`/estados/${stateObject.sigla}/distritos`);
+      const response = await apiIbge.get(`/estados/${stateObject.id}/distritos?orderBy=nome`);
 
-      const citiesAlphabeticalOrder = response.data.sort((a, b) => a.nome.localeCompare(b.nome));
+      setCities([{ id: 1, nome: "Selecione a cidade" }, ...response.data]);
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
-      setCities(citiesAlphabeticalOrder);
+  async function handleSubmit(event) {
+    event.preventDefault();
+
+    if (!selectedStates || selectedStates === "Selecione o estado") {
+      return console.log("Selecione um estado para prosseguir.");
+    }
+
+    if (!selectedCities || selectedCities === "Selecione a cidade") {
+      return console.log("Selecione uma cidade para prosseguir.");
+    }
+
+    if (!languagesSelected.length) {
+      return console.log("Selecione pelo menos uma linguagem para prosseguir.");
+    }
+    let stringLanguage = "";
+
+    for (const language of languagesSelected) {
+      stringLanguage += `language:${language} `
+    }
+
+    try {
+      const response = await apiGitHub.get(`/search/users?q=location:"${selectedStates}" location:"${selectedCities}" ${stringLanguage.trim()}`);
+
+      console.log(response.data.items);
     } catch (error) {
       console.log(error);
     }
@@ -51,7 +78,7 @@ function FormAccio() {
   }, [selectedStates]);
 
   return (
-    <form >
+    <form onSubmit={handleSubmit}>
       <div className="locations">
         <select
           name="select-state"
@@ -97,7 +124,12 @@ function FormAccio() {
         />
       </div>
 
-      {appearModalLanguages && <ModalLanguages />}
+      {appearModalLanguages && (
+        <ModalLanguages
+          languagesSelected={languagesSelected}
+          setlanguagesSelected={setlanguagesSelected}
+        />
+      )}
 
       <button>Accio</button>
     </form>

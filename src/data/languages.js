@@ -123,5 +123,10 @@ export const languages = [
     id: 25,
     name: "TypeScript",
     selected: false
+  },
+  {
+    id: 26,
+    name: "SQL",
+    selected: false
   }
 ]

@@ -2,15 +2,10 @@ import { useState } from "react";
 import { languages } from '../../data/languages';
 import "./style.css";
 
-function ModalLanguages() {
+function ModalLanguages({ languagesSelected, setlanguagesSelected }) {
   const [arrLanguages, setArrLanguages] = useState(languages);
-  const [languagesSelected, setlanguagesSelected] = useState([])
 
   function handleSelectLanguage(language) {
-    // const localArrLanguages = [...arrLanguages];
-
-    // const languageSelected = localArrLanguages.find((language) => language.id === id);
-
     const localLanguagesSelected = [...languagesSelected];
 
     if (!language.selected) {
@@ -31,8 +26,6 @@ function ModalLanguages() {
 
     setlanguagesSelected(localLanguagesSelected);
   }
-
-  console.log(languagesSelected);
 
   return (
     <div className="languages">
