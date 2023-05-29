@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { removeItem } from '../../utils/storage';
 import './style.css';
@@ -17,13 +16,12 @@ function Users({ usersList, setUsersList, entranceExit, setEntranceExit }) {
     }, 900);
   }
 
-  useEffect(() => {
-    window.addEventListener("beforeunload", () => removeItem("accio"));
+  window.addEventListener("beforeunload", () => removeItem("accio"));
 
-    return () => {
-      window.removeEventListener("beforeunload", () => removeItem("accio"));
-    }
-  }, [])
+  window.addEventListener("popstate", () => {
+    removeItem("accio")
+    setEntranceExit(false);
+  });
 
   return (
     <div className="container-main">
@@ -35,31 +33,29 @@ function Users({ usersList, setUsersList, entranceExit, setEntranceExit }) {
         <div className={`users ${entranceExit ? "slide-in-bottom" : "slide-out-bottom"}`}>
 
           {usersList.map((user) => (
-            <div
-              className='user-card'
+            <a
+              href={user.html_url}
+              target="_blank"
               key={user.id}
             >
-              <img
-                src={user.avatar_url
-                }
-                alt="avatar"
-              />
+              <div
+                className='user-card'
+              >
+                <img
+                  src={user.avatar_url
+                  }
+                  alt="avatar"
+                />
 
-              <div className='info-user'>
-                <h3>
-                  {user.login}
-                </h3>
-                <a
-                  href={user.html_url}
-                  target="_blank"
-                >
-                  <div className='visit-btn'>
-                    Visitar
-                  </div>
-                </a>
+                <div className='info-user'>
+                  <h3 title={user.login}>
+                    {user.login}
+                  </h3>
+
+                </div>
+                <span>{`# ${++count}`}</span>
               </div>
-              <span>{`# ${++count}`}</span>
-            </div>
+            </a>
           ))}
         </div>
 

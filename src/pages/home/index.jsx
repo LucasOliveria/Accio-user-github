@@ -1,21 +1,8 @@
-import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import cat from "../../assets/cat.png";
 import FormAccio from '../../components/FormAccio';
-import { getItem } from "../../utils/storage";
 import './style.css';
 
 function Home({ setUsersList, entranceExit, setEntranceExit }) {
-  const navegate = useNavigate();
-
-  useEffect(() => {
-    if (!getItem("accio")) {
-      setEntranceExit(false);
-
-      navegate("/");
-    }
-  }, []);
-
   return (
     <div className="container-main">
       <div className="container-background">

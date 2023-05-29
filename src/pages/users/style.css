@@ -17,10 +17,15 @@
     align-items: center;
 }
 
+.users a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
 .user-card {
     display: flex;
     align-items: center;
-    width: 300px;
+    width: 250px;
     height: 100px;
     padding-left: 10px;
     font-weight: 700;
@@ -51,25 +56,23 @@ img[alt="avatar"] {
     background-color: #ffffff;
 }
 
-.info-user {
+.info-user h3 {
     margin-left: 20px;
-}
-
-.info-user a {
-    text-decoration: none;
-    color: #ffffff;
+    max-width: 135px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .visit-btn {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 60px;
+    min-width: 60px;
     height: 25px;
     border: none;
     border-radius: 10px;
-    background-color: #46b8db;
-    cursor: pointer;
+    background-color: #307f97;
 }
 
 .container-users button {

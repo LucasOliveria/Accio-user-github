@@ -24,7 +24,7 @@
 .container-main {
   max-width: 100vw;
   min-height: 100vh;
-  background: linear-gradient(to right, #000000 20%, #5A189A);
+  background: linear-gradient(to right, #000000 30%, #5A189A);
   color: #ffffff;
   position: relative;
 }
@@ -59,16 +59,14 @@ form,
 .btn-languages,
 button,
 .language,
-.user-card,
-.visit-btn {
+.user-card {
   transition: all 0.3s;
 }
 
 .locations select:hover,
 .btn-languages:hover,
 button:hover,
-.language:hover,
-.visit-btn:hover {
+.language:hover {
   box-shadow: 0 2px 20px #72efdd;
 }
 
