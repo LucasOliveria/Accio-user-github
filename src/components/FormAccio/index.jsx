@@ -4,6 +4,7 @@ import optIcon from "../../assets/opt-icon.svg";
 import { languages } from '../../data/languages';
 import apiGitHub from "../../services/api-git-hub";
 import apiIbge from '../../services/api-ibge';
+import { setItem } from "../../utils/storage";
 import ModalLanguages from "../ModalLanguages";
 import "./style.css";
 
@@ -70,11 +71,11 @@ function FormAccio({ setUsersList, setEntranceExit }) {
 
       setUsersList(response.data.items);
 
+      setItem("accio", "users");
+
       clearForm();
 
       setEntranceExit(true);
-
-      // console.log(`/search/users?q=location:"${selectedCities}" ${stringLanguage.trim()}`);
 
       setTimeout(() => {
         navigate("/users");

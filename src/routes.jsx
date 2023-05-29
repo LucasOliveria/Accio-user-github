@@ -1,7 +1,14 @@
-import { Routes, Route } from "react-router-dom";
+import { useState } from "react";
+import { Navigate, Outlet, Route, Routes } from "react-router-dom";
 import Home from "./pages/home";
 import Users from "./pages/users";
-import { useState } from "react";
+import { getItem } from "./utils/storage";
+
+function ProtectedRoute({ redirectTo }) {
+  const authorized = getItem("accio");
+
+  return authorized ? <Outlet /> : <Navigate to={redirectTo} />
+}
 
 function AllRoutes() {
   const [usersList, setUsersList] = useState([]);
@@ -17,15 +24,18 @@ function AllRoutes() {
           setEntranceExit={setEntranceExit}
         />}
       />
-      <Route
-        path="/users"
-        element={<Users
-          usersList={usersList}
-          setUsersList={setUsersList}
-          entranceExit={entranceExit}
-          setEntranceExit={setEntranceExit}
-        />}
-      />
+
+      <Route element={<ProtectedRoute redirectTo="/" />}>
+        <Route
+          path="/users"
+          element={<Users
+            usersList={usersList}
+            setUsersList={setUsersList}
+            entranceExit={entranceExit}
+            setEntranceExit={setEntranceExit}
+          />}
+        />
+      </Route>
     </Routes>
   )
 }

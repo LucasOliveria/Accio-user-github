@@ -59,14 +59,16 @@ form,
 .btn-languages,
 button,
 .language,
-.user-card {
+.user-card,
+.visit-btn {
   transition: all 0.3s;
 }
 
 .locations select:hover,
 .btn-languages:hover,
 button:hover,
-.language:hover {
+.language:hover,
+.visit-btn:hover {
   box-shadow: 0 2px 20px #72efdd;
 }
 
