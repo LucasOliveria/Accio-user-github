@@ -40,6 +40,10 @@ function FormAccio({ setUsersList, setEntranceExit }) {
     try {
       const response = await apiIbge.get(`/estados/${stateObject.id}/distritos?orderBy=nome`);
 
+      if (stateObject.id === 35) {
+        return setCities([{ id: 1, nome: "Selecione a cidade" }, { id: 2, nome: "São Paulo" }, ...response.data]);
+      }
+
       setCities([{ id: 1, nome: "Selecione a cidade" }, ...response.data]);
     } catch (error) {
       console.log(error);
