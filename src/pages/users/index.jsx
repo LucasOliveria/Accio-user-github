@@ -28,8 +28,16 @@ function Users({ usersList, setUsersList, entranceExit, setEntranceExit }) {
       <div className="container-background container-users">
 
         <div className={`${entranceExit ? "slide-in-bottom" : "slide-out-bottom"}`}>
-          <h1>Usuários</h1>
+          {usersList.length ?
+            (
+              <h1>Usuários</h1>
+            ) :
+            (
+              <h2>Sua pesquisa não encontrou nenhum usuário correspondente!</h2>
+            )
+          }
         </div>
+
         <div className={`users ${entranceExit ? "slide-in-bottom" : "slide-out-bottom"}`}>
 
           {usersList.map((user) => (
