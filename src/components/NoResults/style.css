@@ -1,0 +1,30 @@
+.container-no-results {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: calc(100vh - 50px);
+}
+
+.container-message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 320px;
+  height: 250px;
+  background-color: #000000a9;
+  position: relative;
+}
+
+
+img[alt="wand"] {
+  width: 50px;
+  position: absolute;
+  top: 5%;
+}
+
+.container-message h2 {
+  margin: 20px;
+}

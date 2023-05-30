@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import NoResults from "../../components/NoResults";
 import { removeItem } from '../../utils/storage';
 import './style.css';
 
@@ -33,7 +34,7 @@ function Users({ usersList, setUsersList, entranceExit, setEntranceExit }) {
               <h1>Usuários</h1>
             ) :
             (
-              <h2>Sua pesquisa não encontrou nenhum usuário correspondente!</h2>
+              <NoResults />
             )
           }
         </div>

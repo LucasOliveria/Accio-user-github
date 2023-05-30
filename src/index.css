@@ -45,13 +45,15 @@ form,
 .locations select,
 .btn-languages,
 .language,
-.user-card {
+.user-card,
+.container-message {
   border-radius: 10px;
 }
 
 .btn-languages,
 .language,
-.user-card {
+.user-card,
+.container-message {
   border: 1px solid #767676;
 }
 
