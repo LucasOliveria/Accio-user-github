@@ -17,7 +17,7 @@ function AllRoutes() {
   return (
     <Routes>
       <Route
-        path="/"
+        path="*"
         element={<Home
           setUsersList={setUsersList}
           entranceExit={entranceExit}
@@ -36,13 +36,6 @@ function AllRoutes() {
           />}
         />
       </Route>
-
-      <Route path="*" element={<Home
-        setUsersList={setUsersList}
-        entranceExit={entranceExit}
-        setEntranceExit={setEntranceExit}
-      />}
-      />
     </Routes>
   )
 }
