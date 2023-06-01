@@ -36,6 +36,8 @@ function AllRoutes() {
           />}
         />
       </Route>
+
+      <Route path="*" element={<Users />} />
     </Routes>
   )
 }

@@ -17,10 +17,7 @@ function Users({ usersList, setUsersList, entranceExit, setEntranceExit }) {
     }, 900);
   }
 
-  window.addEventListener("beforeunload", () => {
-    removeItem("accio");
-    navigate("/");
-  });
+  window.addEventListener("beforeunload", () => removeItem("accio"));
 
   window.addEventListener("popstate", () => {
     removeItem("accio");
