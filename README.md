@@ -64,7 +64,7 @@
 <h4>Sem resultados</h4>
 <img src="./src/images/no-results.png" alt="Escolhendo Palpites">
 
-<p style="text-align: justify;">
+!!<p style="text-align: justify;">
  <b><strong style="color: blue;">OBS</strong>.: Ainda não está responsívo em versões mobiles! Novas atualizações em breve</b>
 </p>
 
