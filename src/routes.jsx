@@ -37,7 +37,7 @@ function AllRoutes() {
         />
       </Route>
 
-      <Route path="*" element={<Users />} />
+      <Route path="*" element={<Home />} />
     </Routes>
   )
 }
