@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import NoResults from "../../components/NoResults";
 import { removeItem } from '../../utils/storage';
 import './style.css';
+import { useEffect } from "react";
 
 function Users({ usersList, setUsersList, entranceExit, setEntranceExit }) {
   const navigate = useNavigate();
@@ -17,7 +18,14 @@ function Users({ usersList, setUsersList, entranceExit, setEntranceExit }) {
     }, 900);
   }
 
-  window.addEventListener("beforeunload", () => removeItem("accio"));
+  useEffect(() => {
+    window.addEventListener("beforeunload", () => removeItem("accio"));
+
+    return () => {
+      window.addEventListener("beforeunload", () => removeItem("accio"));
+
+    }
+  }, []);
 
   window.addEventListener("popstate", () => {
     removeItem("accio");

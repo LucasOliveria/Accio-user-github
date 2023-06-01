@@ -37,7 +37,12 @@ function AllRoutes() {
         />
       </Route>
 
-      <Route path="*" element={<Home />} />
+      <Route path="*" element={<Home
+        setUsersList={setUsersList}
+        entranceExit={entranceExit}
+        setEntranceExit={setEntranceExit}
+      />}
+      />
     </Routes>
   )
 }
