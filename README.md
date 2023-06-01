@@ -16,6 +16,9 @@
   Para tal funcionamento foram utilizadas duas API's. A <strong style="color: blue;">API do IBGE</strong> com dados de estados e cidades correspondentes e a <strong style="color: blue;">API do GitHub</strong>  com informações sobre seus usuários.
 </p>
 
+<p style="text-align: justify;">
+    Visite a aplicação: <a href="https://accio-user-github.netlify.app/">Accio User GitHub</a>
+
 <h2 style="font-family: sans-serif;">Sobre a ordem dos resultados:</h2>
 
 <p style="text-align: justify;">
@@ -23,6 +26,11 @@
   <strong style="color: blue;">do Maior Match para o Menor Match</strong>.
 </p>
 
+<h2 style="font-family: sans-serif;">Como utilizar os códigos desse repositório:</h2>
+
+<p style="text-align: justify;">
+    Caso queira utilizar o código presente nesse repositório basta cloná-lo para sua máquina e utilizar o comando npm install no terminal do seu Editor de código para instalar node_modules e suas dependências. Após isso você poderá rodar a aplicação utilizando o comando npm run dev.
+</p>
 
 <h2 style="font-family: sans-serif;">Linguagens e bibliotecas utilizadas:</h2>
 
@@ -67,4 +75,6 @@
 <h2 style="font-family: sans-serif;">Links</h2>
 
 <a href="http://www.linkedin.com/in/lucas-de-oliveira-5b8a5532" target="_blank">LinkedIn</a>
+<br>
+<a href="https://accio-user-github.netlify.app/" target="_blank">Accio User GitHub</a>
 <br>
