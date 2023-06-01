@@ -62,7 +62,7 @@ function Users({ usersList, setUsersList, entranceExit, setEntranceExit }) {
                   </h3>
 
                 </div>
-                <span>{`# ${++count}`}</span>
+                <span>{`${++count}`}</span>
               </div>
             </a>
           ))}

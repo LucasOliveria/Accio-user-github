@@ -25,7 +25,7 @@ function Home({ setUsersList, entranceExit, setEntranceExit }) {
               </span> desejadas.
             </p>
             <p>
-              Encontre os perfis que melhor correspondem a sua busca.
+              Encontre os perfis que melhor <br /> correspondem a sua busca.
             </p>
             <p>
               Lance um <span className='highlighted-word'>Accio</span>!
