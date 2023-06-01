@@ -17,7 +17,7 @@
 </p>
 
 <p style="text-align: justify;">
-    Visite a aplicação: <a href="https://accio-user-github.netlify.app/">Accio User GitHub</a>
+    Visite a aplicação: <a href="https://accio-users-github.netlify.app/">Accio User GitHub</a>
 
 <h2 style="font-family: sans-serif;">Sobre a ordem dos resultados:</h2>
 
@@ -76,5 +76,5 @@
 
 <a href="http://www.linkedin.com/in/lucas-de-oliveira-5b8a5532" target="_blank">LinkedIn</a>
 <br>
-<a href="https://accio-user-github.netlify.app/" target="_blank">Accio User GitHub</a>
+<a href="https://accio-users-github.netlify.app/" target="_blank">Accio User GitHub</a>
 <br>
