@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import optIcon from "../../assets/opt-icon.svg";
 import { languages } from '../../data/languages';
 import apiGitHub from "../../services/api-git-hub";
@@ -25,7 +26,7 @@ function FormAccio({ setUsersList, setEntranceExit }) {
 
       setStates([{ id: 1, nome: "Selecione o estado" }, ...response.data]);
     } catch (error) {
-      console.log(error);
+      toast.error("ERRO 500 - Tente novamente mais tarde");
     }
   }
 
@@ -46,7 +47,7 @@ function FormAccio({ setUsersList, setEntranceExit }) {
 
       setCities([{ id: 1, nome: "Selecione a cidade" }, ...response.data]);
     } catch (error) {
-      console.log(error);
+      toast.error("ERRO 500 - Tente novamente mais tarde");
     }
   }
 
@@ -54,21 +55,23 @@ function FormAccio({ setUsersList, setEntranceExit }) {
     event.preventDefault();
 
     if (!selectedStates || selectedStates === "Selecione o estado") {
-      return console.log("Selecione um estado para prosseguir.");
+      return toast.info("Selecione um estado para prosseguir.");
     }
 
     if (!selectedCities || selectedCities === "Selecione a cidade") {
-      return console.log("Selecione uma cidade para prosseguir.");
+      return toast.info("Selecione uma cidade para prosseguir.");
     }
 
     if (!languagesSelected.length) {
-      return console.log("Selecione pelo menos uma linguagem para prosseguir.");
+      return toast.info("Selecione pelo menos uma linguagem para prosseguir.");
     }
     let stringLanguage = "";
 
     for (const language of languagesSelected) {
       stringLanguage += `language:${language} `
     }
+
+    const id = toast.loading("Por favor aguarde...")
 
     try {
       const response = await apiGitHub.get(`/search/users?q=location:"${selectedCities}" ${stringLanguage.trim()}`);
@@ -85,8 +88,21 @@ function FormAccio({ setUsersList, setEntranceExit }) {
         navigate("/users");
       }, 900);
 
+      toast.update(id, {
+        render: "Accio Users!",
+        type: "success",
+        isLoading: false,
+        autoClose: 1000,
+        closeOnClick: true
+      });
     } catch (error) {
-      console.log(error);
+      toast.update(id, {
+        render: "ERRO 500 - Tente novamente mais tarde",
+        type: "error",
+        isLoading: false,
+        autoClose: 1000,
+        closeOnClick: true
+      });
     }
   }
 

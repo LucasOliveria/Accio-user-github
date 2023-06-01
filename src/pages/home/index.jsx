@@ -4,7 +4,7 @@ import './style.css';
 
 function Home({ setUsersList, entranceExit, setEntranceExit }) {
   return (
-    <div className="container-main">
+    <main className="container-main">
       <div className="container-background">
         <div className={`left-container ${!entranceExit ? "slide-in-top" : "slide-out-top"}`}>
           <h1>
@@ -47,7 +47,7 @@ function Home({ setUsersList, entranceExit, setEntranceExit }) {
           />
         </div>
       </div>
-    </div>
+    </main>
   )
 }
 

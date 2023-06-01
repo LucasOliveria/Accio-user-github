@@ -1,5 +1,5 @@
-import "./style.css";
 import wand from "../../assets/wand.png";
+import "./style.css";
 
 function NoResults() {
   return (

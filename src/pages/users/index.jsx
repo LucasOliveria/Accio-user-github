@@ -20,12 +20,12 @@ function Users({ usersList, setUsersList, entranceExit, setEntranceExit }) {
   window.addEventListener("beforeunload", () => removeItem("accio"));
 
   window.addEventListener("popstate", () => {
-    removeItem("accio")
+    removeItem("accio");
     setEntranceExit(false);
   });
 
   return (
-    <div className="container-main">
+    <main className="container-main">
       <div className="container-background container-users">
 
         <div className={`${entranceExit ? "slide-in-bottom" : "slide-out-bottom"}`}>
@@ -70,7 +70,7 @@ function Users({ usersList, setUsersList, entranceExit, setEntranceExit }) {
 
         <button onClick={handleGoBack}>Voltar</button>
       </div>
-    </div>
+    </main>
   )
 }
 

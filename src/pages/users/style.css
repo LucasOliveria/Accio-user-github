@@ -34,10 +34,6 @@
     position: relative;
 }
 
-/* .user-card:first-of-type {
-    margin-top: 25px;
-} */
-
 .user-card span {
     position: absolute;
     top: 3%;
@@ -62,17 +58,6 @@ img[alt="avatar"] {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-}
-
-.visit-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-width: 60px;
-    height: 25px;
-    border: none;
-    border-radius: 10px;
-    background-color: #307f97;
 }
 
 .container-users button {
