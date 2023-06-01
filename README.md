@@ -3,7 +3,7 @@
 <h2 style="font-family: sans-serif;">Sobre o projeto:</h2>
 
 <p style="text-align: justify;">
-    O objetivo desse projeto foi desenvolver uma maneira mais <strong style="color: blue;">fácil</strong> de <strong style="color: blue;">pesquisar usuários no GitHub</strong>. Um localizador de usuários com perfis que melhor correspondam a localidade e tipo ou tipos de linguagem de programação escolhidos nos parâmetro de busca. Tornando a experiência de quem busca usuários no GitHub mais <strong style="color: blue;">rápida</strong> e <strong style="color: blue;">prática.</strong>
+    O objetivo desse projeto foi desenvolver uma maneira mais <strong style="color: blue;">{c:blue}fácil</strong> de <strong style="color: blue;">pesquisar usuários no GitHub</strong>. Um localizador de usuários com perfis que melhor correspondam a localidade e tipo ou tipos de linguagem de programação escolhidos nos parâmetro de busca. Tornando a experiência de quem busca usuários no GitHub mais <strong style="color: blue;">rápida</strong> e <strong style="color: blue;">prática.</strong>
 </p>
 
 <h2 style="font-family: sans-serif;">Sobre o Accio Users GitHub:</h2>
@@ -64,7 +64,7 @@
 <h4>Sem resultados</h4>
 <img src="./src/images/no-results.png" alt="Escolhendo Palpites">
 
-!!<p style="text-align: justify;">
+<p style="text-align: justify;">
  <b><strong style="color: blue;">OBS</strong>.: Ainda não está responsívo em versões mobiles! Novas atualizações em breve</b>
 </p>
 
