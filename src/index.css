@@ -43,6 +43,17 @@
   background-position: top right;
 }
 
+@media (min-width: 375px) and (max-width:720px) {
+  .container-main {
+    background: linear-gradient(to bottom, #000000 25%, #3C096C 49%);
+  }
+
+  .container-background {
+    background-position: bottom;
+    background-attachment: scroll;
+  }
+}
+
 form,
 .locations select,
 .btn-languages,

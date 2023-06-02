@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: flex-start;
   width: 50%;
-  min-width: 375px;
+  min-width: 360px;
   padding: 35px 0 0 25px;
   background-repeat: no-repeat;
   background-position: bottom 0%;
@@ -57,13 +57,23 @@ img[alt="cat"] {
   justify-content: center;
   align-items: flex-start;
   width: 50%;
-  min-width: 375px;
+  min-width: 360px;
   background-repeat: no-repeat;
   background-position: top 50px left 0%;
   background-size: contain;
 }
 
-@media (max-width: 375px) {
+@media (min-width: 375px) and (max-width:720px) {
+  .left-container {
+    width: 100%;
+    min-width: 0px;
+  }
+
+  .right-container {
+    width: 100%;
+    min-width: 0px;
+  }
+
   .left-container h1 {
     font-size: 50px;
   }
@@ -71,16 +81,12 @@ img[alt="cat"] {
   img[alt="cat"] {
     width: 42px;
   }
-}
 
-@media (max-width: 375px) {
-  .instructions h2 {
-    font-size: 30px;
-  }
-}
-
-@media (max-width: 375px) {
   .instructions p {
     font-size: 25px;
+  }
+
+  .instructions h2 {
+    font-size: 30px;
   }
 }

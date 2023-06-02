@@ -70,29 +70,23 @@ button {
   cursor: pointer;
 }
 
-@media (max-width: 375px) {
+@media (min-width: 375px) and (max-width:720px) {
 
   .locations select,
   .btn-languages {
     font-size: 12px;
   }
-}
 
-@media (max-width: 375px) {
   .btn-languages {
     width: 74%;
   }
-}
 
-@media (min-width: 375px) {
   img[alt="opções"] {
     width: 12px;
     height: 17px;
     transition: all 0.7s;
   }
-}
 
-@media (max-width: 375px) {
   button {
     font-size: 13px;
 
