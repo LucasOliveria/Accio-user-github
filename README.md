@@ -45,7 +45,7 @@
     <li>API GitHub</li>
 </ul>
 
-<h2 style="font-family: sans-serif;">Layout (não responsívo para mobile):</h2>
+<h2 style="font-family: sans-serif;">Layout:</h2>
 
 <h4>Tela inicial</h4>
 <img src="./src/images/home-screen.png" alt="Escolhendo Palpites">
@@ -63,10 +63,6 @@
 
 <h4>Sem resultados</h4>
 <img src="./src/images/no-results.png" alt="Escolhendo Palpites">
-
-<p style="text-align: justify;">
- <b><strong style="color: blue;"><kbd>OBS.: Ainda não está responsívo em versões mobiles! Novas atualizações em breve</kbd></strong></b>
-</p>
 
 <h2 style="font-family: sans-serif;">Autor</h2>
 
