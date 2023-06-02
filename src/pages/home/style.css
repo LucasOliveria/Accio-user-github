@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: flex-start;
   width: 50%;
-  min-width: 450px;
+  min-width: 375px;
   padding: 35px 0 0 25px;
   background-repeat: no-repeat;
   background-position: bottom 0%;
@@ -57,8 +57,30 @@ img[alt="cat"] {
   justify-content: center;
   align-items: flex-start;
   width: 50%;
-  min-width: 500px;
+  min-width: 375px;
   background-repeat: no-repeat;
   background-position: top 50px left 0%;
   background-size: contain;
+}
+
+@media (max-width: 375px) {
+  .left-container h1 {
+    font-size: 50px;
+  }
+
+  img[alt="cat"] {
+    width: 42px;
+  }
+}
+
+@media (max-width: 375px) {
+  .instructions h2 {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 375px) {
+  .instructions p {
+    font-size: 25px;
+  }
 }

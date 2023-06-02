@@ -19,15 +19,15 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
   overflow-x: hidden;
-  --toastify-color-info: #000000;
 }
 
 .container-main {
-  max-width: 100vw;
+  min-width: 100vw;
   min-height: 100vh;
   background: linear-gradient(to right, #000000 25%, #3C096C 49%);
   color: #ffffff;
   position: relative;
+  padding-right: 10px;
 }
 
 .container-background {
