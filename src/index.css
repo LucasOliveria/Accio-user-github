@@ -22,7 +22,6 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-  overflow-x: hidden;
 }
 
 body {
@@ -30,7 +29,7 @@ body {
 }
 
 .container-main {
-  min-width: 100vw;
+  max-width: 100vw;
   min-height: 100vh;
   background: linear-gradient(to right, #000000 25%, #3C096C 49%);
   color: #ffffff;
@@ -59,6 +58,15 @@ form,
 .Toastify__toast-theme--colored.Toastify__toast--success,
 .Toastify__toast-theme--colored.Toastify__toast--info {
   border-radius: 10px;
+}
+
+.btn-menu,
+img[alt="close"],
+.locations select,
+.btn-languages,
+.language,
+button {
+  cursor: pointer;
 }
 
 .btn-languages,
@@ -121,8 +129,7 @@ button:hover,
   }
 
   .container-background {
-    background-position: bottom;
-    background-attachment: scroll;
+    background-image: none;
   }
 
   .locations select:hover,

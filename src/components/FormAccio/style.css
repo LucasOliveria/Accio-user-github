@@ -33,7 +33,6 @@ form {
   font-size: 16px;
   font-weight: 700;
   color: #ffffffb3;
-  cursor: pointer;
 }
 
 .locations select option {
@@ -67,10 +66,9 @@ button {
   font-size: 16px;
   color: #ffffff;
   background-color: #46b8db;
-  cursor: pointer;
 }
 
-@media (min-width: 375px) and (max-width:720px) {
+@media (min-width: 360px) and (max-width:720px) {
 
   .locations select,
   .btn-languages {
