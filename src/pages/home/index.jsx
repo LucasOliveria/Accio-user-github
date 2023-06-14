@@ -31,7 +31,12 @@ function Home({ setUsersList, entranceExit, setEntranceExit }) {
               Lance um <span className='highlighted-word'>Accio</span>!
             </p>
           </div>
-
+        </div>
+        <div className={`right-container ${!entranceExit ? "slide-in-top" : "slide-out-top"}`} >
+          <FormAccio
+            setUsersList={setUsersList}
+            setEntranceExit={setEntranceExit}
+          />
           <div className='icon-reference'>
             <a
               href="https://br.freepik.com/vetores-gratis/varinha-magica-com-fundo-vermelho-da-fuga_1110451.htm#query=varinha%20magica&position=10&from_view=keyword&track=ais" target='_black'
@@ -39,12 +44,6 @@ function Home({ setUsersList, entranceExit, setEntranceExit }) {
               Image by gluiki - Freepik
             </a>
           </div>
-        </div>
-        <div className={`right-container ${!entranceExit ? "slide-in-top" : "slide-out-top"}`} >
-          <FormAccio
-            setUsersList={setUsersList}
-            setEntranceExit={setEntranceExit}
-          />
         </div>
       </div>
     </main>

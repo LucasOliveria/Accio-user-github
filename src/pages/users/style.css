@@ -66,3 +66,9 @@ img[alt="avatar"] {
     bottom: 0;
     right: 0;
 }
+
+@media (min-width: 375px) and (max-width:720px) {
+    .user-card:hover {
+        transform: scale(1);
+    }
+}
