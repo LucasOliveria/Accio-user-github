@@ -127,64 +127,62 @@ function FormAccio({
 
   return (
     <div className="container-form">
-      {!openModal &&
-        <form onSubmit={handleSubmit}>
-          <div className="locations">
-            <select
-              name="select-state"
-              onChange={(event) => setSelectedStates(event.target.value)}
-              value={selectedStates}
-            >
-              {states.map((state) => (
-                <option
-                  key={state.id}
-                  value={state.nome}
-                >
-                  {state.nome}
-                </option>
-              ))}
-            </select>
-
-            <select
-              name="select-city"
-              onChange={(event) => setSelectedCities(event.target.value)}
-              value={selectedCities}
-            >
-              {cities.map((city) => (
-                <option
-                  key={city.id}
-                  value={city.nome}
-                >
-                  {city.nome}
-                </option>
-              ))}
-            </select>
-          </div>
-
-          <div
-            className='btn-languages'
-            onClick={() => setAppearModalLanguages(!appearModalLanguages)}
+      <form onSubmit={handleSubmit}>
+        <div className="locations">
+          <select
+            name="select-state"
+            onChange={(event) => setSelectedStates(event.target.value)}
+            value={selectedStates}
           >
-            <span>Selecione as linguagens</span>
+            {states.map((state) => (
+              <option
+                key={state.id}
+                value={state.nome}
+              >
+                {state.nome}
+              </option>
+            ))}
+          </select>
 
-            <img
-              src={optIcon}
-              alt="opções"
-              style={{ transform: `${appearModalLanguages ? "rotate(45deg)" : "rotate(-90deg)"}` }}
-            />
-          </div>
+          <select
+            name="select-city"
+            onChange={(event) => setSelectedCities(event.target.value)}
+            value={selectedCities}
+          >
+            {cities.map((city) => (
+              <option
+                key={city.id}
+                value={city.nome}
+              >
+                {city.nome}
+              </option>
+            ))}
+          </select>
+        </div>
 
-          {appearModalLanguages && (
-            <ModalLanguages
-              languagesList={languagesList}
-              languagesSelected={languagesSelected}
-              setlanguagesSelected={setlanguagesSelected}
-            />
-          )}
+        <div
+          className='btn-languages'
+          onClick={() => setAppearModalLanguages(!appearModalLanguages)}
+        >
+          <span>Selecione as linguagens</span>
 
-          <button>Accio</button>
-        </form>
-      }
+          <img
+            src={optIcon}
+            alt="opções"
+            style={{ transform: `${appearModalLanguages ? "rotate(45deg)" : "rotate(-90deg)"}` }}
+          />
+        </div>
+
+        {appearModalLanguages && (
+          <ModalLanguages
+            languagesList={languagesList}
+            languagesSelected={languagesSelected}
+            setlanguagesSelected={setlanguagesSelected}
+          />
+        )}
+
+        <button>Accio</button>
+      </form>
     </div>
   )
 }

@@ -16,6 +16,12 @@ function Home({
     <main className="container-main">
       <div className="container-background">
         <div className={`left-container ${!entranceExit ? "slide-in-top" : "slide-out-top"}`}>
+
+          <h1>
+            Accio Users
+            <img src={cat} alt="cat" />
+          </h1>
+
           <div className={`${openModal && "modal slide-in-top"}`}>
             {openModal ?
               <img
@@ -32,12 +38,6 @@ function Home({
                 />
                 <h3>Instruções</h3>
               </div>
-            }
-            {!openModal &&
-              <h1>
-                Accio Users
-                <img src={cat} alt="cat" />
-              </h1>
             }
             <div className="instructions">
               <h2>
@@ -60,6 +60,8 @@ function Home({
             </div>
           </div>
         </div>
+
+
         <div className={`right-container ${!entranceExit ? "slide-in-top" : "slide-out-top"}`} >
           <FormAccio
             setUsersList={setUsersList}
