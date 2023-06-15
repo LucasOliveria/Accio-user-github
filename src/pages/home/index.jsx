@@ -61,7 +61,6 @@ function Home({
           </div>
         </div>
 
-
         <div className={`right-container ${!entranceExit ? "slide-in-top" : "slide-out-top"}`} >
           <FormAccio
             setUsersList={setUsersList}
