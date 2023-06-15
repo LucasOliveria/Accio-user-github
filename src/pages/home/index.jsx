@@ -5,45 +5,40 @@ import instructionMenu from "../../assets/menu.svg";
 import FormAccio from '../../components/FormAccio';
 import './style.css';
 
-function Home({ setUsersList, entranceExit, setEntranceExit }) {
+function Home({
+  setUsersList,
+  entranceExit,
+  setEntranceExit
+}) {
   const [openModal, setopenModal] = useState(false);
-
-
-  useEffect(() => {
-    if (openModal) {
-      document.body.style.overflow = "hidden";
-      return;
-    }
-
-    document.body.style.overflow = "auto";
-  }, [openModal]);
 
   return (
     <main className="container-main">
       <div className="container-background">
         <div className={`left-container ${!entranceExit ? "slide-in-top" : "slide-out-top"}`}>
-          {openModal ?
-            <img
-              src={close}
-              alt="close"
-              onClick={() => setopenModal(false)}
-            />
-            :
-            <div className="btn-menu">
-              <img
-                src={instructionMenu}
-                alt="Instruction"
-                onClick={() => setopenModal(true)}
-              />
-              <h3>Instruções</h3>
-            </div>
-          }
-          <h1>
-            Accio Users
-            <img src={cat} alt="cat" />
-          </h1>
-
           <div className={`${openModal && "modal slide-in-top"}`}>
+            {openModal ?
+              <img
+                src={close}
+                alt="close"
+                onClick={() => setopenModal(false)}
+              />
+              :
+              <div className="btn-menu">
+                <img
+                  src={instructionMenu}
+                  alt="Instruction"
+                  onClick={() => setopenModal(true)}
+                />
+                <h3>Instruções</h3>
+              </div>
+            }
+            {!openModal &&
+              <h1>
+                Accio Users
+                <img src={cat} alt="cat" />
+              </h1>
+            }
             <div className="instructions">
               <h2>
                 Busque usuários no GitHub <br /> de uma forma rápida e prática
@@ -69,6 +64,7 @@ function Home({ setUsersList, entranceExit, setEntranceExit }) {
           <FormAccio
             setUsersList={setUsersList}
             setEntranceExit={setEntranceExit}
+            openModal={openModal}
           />
           <div className='icon-reference'>
             <a
